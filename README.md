@@ -3,6 +3,21 @@
 A continuación se presenta una guía de estilo para el código LaTeX de los
 documentos de FIUBA Apuntes.
 
+## Índice
+
+* [Archivos y directorios](#archivos-y-directorios)
+* [General](#general)
+  + [Largo de línea](#largo-de-línea)
+  + [Indentación](#indentación)
+* [Preámbulo](#preámbulo)
+  + [Encabezado del documento](#encabezado-del-documento)
+  + [Clase del documento](#clase-del-documento)
+  + [Paquetes](#paquetes)
+* [Cuerpo (documento)](#cuerpo-documento)
+  + [Distribución del texto](#distribución-del-texto)
+  + [Indentación y separación entre secciones](#indentación-y-separación-entre-secciones)
+* [Fuentes](#fuentes)
+
 ## Archivos y directorios
 Con el fin de que los archivos fuentes sean interoperables entre los distintos
 sistemas operativos, los archivos y directorios no deben contener espacios.
@@ -14,8 +29,8 @@ La extensión de todo archivo fuente de documentos LaTeX debe ser `tex`.
 
 <table>
   <tr>
-    <th>**Recomendable**</th>
-    <th>**NO Recomendable**</th>
+    <th>Recomendable</th>
+    <th>NO Recomendable</th>
   </tr>
   <tr>
     <td>
@@ -33,8 +48,6 @@ La extensión de todo archivo fuente de documentos LaTeX debe ser `tex`.
 </table>
 
 ## General
-
-### Formato general
 
 ### Largo de línea
 
@@ -62,13 +75,13 @@ largo de línea sugerido, se recomienda distribuir de la siguiente manera.
 El contenido del archivo fuente de un documento es básicamente el contenido del
 documento que se va a generar, por lo tanto, predomina mucho el texto.
 Es por ello que hay que encontrar un equilibrio entre no indentar (haciendo
-difícil reconcer ciertos elementos) a usar indentación excesiva (el código es
+difícil reconocer ciertos elementos) a usar indentación excesiva (el código es
 muy legible, pero queda poco espacio para el texto).
 
 El tamaño de la indentación debe ser de 2 espacios.
 No usar `Tabs` ya que muchos editores lo interpretan como 8 espacios.
 
-## Preambulo
+## Preámbulo
 
 ### Encabezado del documento
 
@@ -186,7 +199,7 @@ Estoy muy contento.
 Indentar sólo cuando se inicia un nuevo grupo o entorno, a excepción del entorno
 `document`, ya que reduciría el espacio para el contenido de todo el documento.
 NO indentar cuando se inicia una nueva sección.
-Si se hiciera, en cada sub sección quedaría cada vez menos espacio para el texto.
+Si se hiciera, en cada subsección quedaría cada vez menos espacio para el texto.
 
 **NO recomendado**
 ```latex
@@ -231,7 +244,7 @@ Si se hiciera, en cada sub sección quedaría cada vez menos espacio para el tex
 ```
 
 ## Fuentes
-Las fuentes que han servido de inspiración para el desarrollo de las guias de
+Las fuentes que han servido de inspiración para el desarrollo de la guía de
 estilo (además de la experiencia de cada uno escribiendo documentos en LaTeX).
 
 * [LaTeX Wikibook: Basics](https://en.wikibooks.org/wiki/LaTeX/Basics)
