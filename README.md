@@ -5,7 +5,9 @@ documentos de FIUBA Apuntes.
 
 ## Índice
 
-* [Archivos y directorios](#archivos-y-directorios)
+* [Archivos](#archivos)
+  + [Nombre del archivo LaTeX](#nombre-del-archivo-latex)
+  + [Codificación](#codificación)
 * [General](#general)
   + [Largo de línea](#largo-de-línea)
   + [Indentación](#indentación)
@@ -16,14 +18,18 @@ documentos de FIUBA Apuntes.
 * [Cuerpo (documento)](#cuerpo-documento)
   + [Distribución del texto](#distribución-del-texto)
   + [Indentación y separación entre secciones](#indentación-y-separación-entre-secciones)
+  + [Etiquetas y referencias](#etiquetas-y-referencias)
 * [Fuentes](#fuentes)
 
-## Archivos y directorios
+## Archivos
+
+### Nombre del archivo LaTeX
+
 Con el fin de que los archivos fuentes sean interoperables entre los distintos
 sistemas operativos, los archivos y directorios no deben contener espacios.
 El nombre de directorios y archivos puede contener letras sin acentos en
 _lowercase_ (minúsculas) [a-z], dígitos [0-9] y las separaciones con guiones (-),
-pero no con espacios.
+pero sin espacios.
 El punto (.) sólo se usa para separar el nombre del archivo con la extensión.
 La extensión de todo archivo fuente de documentos LaTeX debe ser `tex`.
 
@@ -46,6 +52,20 @@ La extensión de todo archivo fuente de documentos LaTeX debe ser `tex`.
     </td>
   </tr>
 </table>
+
+### Codificación
+
+Usar la codificación UTF-8 para los archivos LaTeX.
+De esta manera es posible ingresar directamente la mayoría de los caracteres
+extendidos como vocales con acentos, diéresis, etc.
+
+Para que LaTeX interprete adecuadamente al archivo almacenado con codificación
+UTF-8, se debe incluir el paquete `inputenc`.
+Éste debe ser el primer paquete, luego de definir el `documentclass`.
+
+```latex
+\usepackage[utf8]{inputenc}
+```
 
 ## General
 
@@ -243,11 +263,46 @@ Si se hiciera, en cada subsección quedaría cada vez menos espacio para el text
 \end{document}
 ```
 
+### Etiquetas y referencias
+
+Agregar a las etiquetas (`\label{...}`) el prefijo correspondiente al elemento
+etiquetado.
+Cuando se asignan etiquetas a multiples elementos, los prefijos permite
+distinguirlas fácilmente cuando las mismas son referenciadas.
+
+| Prefijo   | Elemento             |
+| --------- | -------------------- |
+| `ch:`     | chapter              |
+| `sec:`    | section              |
+| `subsec:` | subsection           |
+| `fig:`    | figure               |
+| `tab:`    | table                |
+| `eq:`     | equation             |
+| `lst:`    | code listing         |
+| `fn:`     | footnote             |
+| `itm:`    | itemized list item   |
+| `enum:`   | enumerated list item |
+| `alg:`    | algorithm            |
+| `app:`    | appendix subsection  |
+
+Recordar que al ingresar la referencia, sólo se imprimirá el número
+correspondiente a la etiqueta referenciada.
+Es por eso que es normal anteponer el nombre del elemento a la referencia.
+Para evitar que el nombre del elemento y la referencia sean separadas por un
+salto de línea, ingresar entre ellas un **espacio de no separación**
+(_non-breaking space_).
+
+```latex
+Ver la Figura~\ref{fig:mi-figura} en la página~\pageref{fig:mi-figura}.
+```
+
 ## Fuentes
+
 Las fuentes que han servido de inspiración para el desarrollo de la guía de
 estilo (además de la experiencia de cada uno escribiendo documentos en LaTeX).
 
 * [LaTeX Wikibook: Basics](https://en.wikibooks.org/wiki/LaTeX/Basics)
+* [LaTeX Wikibook: Labels and Cross-referencing](https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing)
 * [Towards LaTeX coding standards](https://www.tug.org/TUGboat/tb32-3/tb102verna.pdf)
 * [Are there any coding style guidelines for LaTeX?](http://tex.stackexchange.com/questions/40775/are-there-any-coding-style-guidelines-for-latex)
 * [Manuscript Templates for Conference Proceedings](http://www.ieee.org/conferences_events/conferences/publishing/templates.html)
